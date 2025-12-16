@@ -4,7 +4,11 @@ import Header from './components/header'
 
 function App() {
   return (
-    <Header />
+    
+    <div>
+      <Header />
+        <h2 class="text-with-shadow">Your List<i class="bi bi-pencil-square"></i></h2>
+    </div>
   );
 }
 
