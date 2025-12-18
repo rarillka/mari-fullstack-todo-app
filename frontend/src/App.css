@@ -15,3 +15,20 @@ header > img {
 .text-with-shadow {
   text-shadow: 1px 1px 5px black;
 }
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-inside {
+  background: white;
+  padding: 30px;
+  font-size: 24px;
+}
