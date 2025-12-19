@@ -1,6 +1,6 @@
 body {
   background-color: #ff9d00;
-}
+  font-family : 'Comic Sans MS', cursive, sans-serif; }
 
 header {
   background-color: white;
@@ -17,18 +17,3 @@ header > img {
 }
 
 
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-inside {
-  background: white;
-  padding: 30px;
-  font-size: 24px;
-}

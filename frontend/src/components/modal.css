@@ -1,0 +1,25 @@
+#modal {
+    position: fixed;
+    inset: 0;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+#modalInside{
+    border-radius: 2.5vw;
+    border: 1.2vw solid black;
+    background-color: white;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#modalHeader{
+    display: flex;
+}
+#taskImpContent{
+    display: flex;
+}
+  
