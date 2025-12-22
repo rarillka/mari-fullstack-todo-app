@@ -1,15 +1,35 @@
 import React from "react";
 // import { useState } from "react";
-import './modal.css'
+import "./modal.css";
 
-function Modal({ active, setActive }) {
+
+function ModalCreate({ active, setActive, updateTodoList}) {
   if (!active) return null;
+  function handleSubmit() {
+    setActive(false);
+    const el = document.getElementById("taskNameInp");
 
+    // Get current todoList from localStorage
+    const currentList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+    // Add new item
+    currentList.push(el.value);
+
+    // Save back to localStorage
+    localStorage.setItem("todoList", JSON.stringify(currentList));
+
+    // Update the global todoList variable and trigger re-render
+    if (updateTodoList) {
+      updateTodoList(currentList);
+    }
+
+    return console.log(currentList);
+  }
   return (
     <div id="modal">
       <div id="modalInside" className="col-lg-8 col-sm-10 h-50">
         <div id="modalHeader">
-          <h1>Edit task</h1>
+          <h1>Create task</h1>
           <i className="bi bi-x-lg" onClick={() => setActive(false)}></i>
         </div>
 
@@ -24,6 +44,7 @@ function Modal({ active, setActive }) {
             <input type="text" id="taskDescInp" />
             <label htmlFor="taskDescInp">150 characters max</label>
           </div>
+          <input type="submit" onClick={handleSubmit} text="Create" />
         </div>
         {/* onClick={(e) => e.stopPropagation()} prevent closing when clicking inside */}
       </div>
@@ -31,4 +52,4 @@ function Modal({ active, setActive }) {
   );
 }
 
-export default Modal;
+export default ModalCreate;
